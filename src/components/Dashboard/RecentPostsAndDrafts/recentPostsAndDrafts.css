@@ -1,0 +1,64 @@
+.recent-posts-drafts {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.recent-posts, .drafts {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-right: 20px;
+}
+
+.drafts {
+  margin-right: 0; /* No margin for the last section */
+}
+
+.recent-posts ul, .drafts ul {
+  list-style: none;
+  padding: 0;
+}
+
+.recent-posts li, .drafts li {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.recent-posts li:last-child, .drafts li:last-child {
+  border-bottom: none;
+}
+
+.actions button, .drafts button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.actions button:last-child, .drafts button:last-child {
+  margin-right: 0;
+}
+
+.actions button:hover, .drafts button:hover {
+  background-color: #0056b3;
+}
+
+h3 {
+  color: #333;
+}
+
+h4 {
+  margin: 0 0 10px 0;
+  color: #007bff;
+}
+
+p {
+  margin: 0 0 10px 0;
+}

@@ -1,0 +1,39 @@
+.performance-insights {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.insight-section {
+  margin-bottom: 20px;
+}
+
+.insight-section h4 {
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.insight-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.insight-section ul li {
+  margin-bottom: 5px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.insight-section ul li:before {
+  content: "•";
+  color: #007bff;
+  position: absolute;
+  left: 0;
+}
+
+.insight-section p {
+  margin: 0;
+  padding-left: 16px;
+}

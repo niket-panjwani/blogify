@@ -2,6 +2,13 @@ import React, { useContext, useEffect } from 'react';
 import Header from '../../components/Dashboard/Header/Header';
 import { AuthContext } from '../../config/Auth/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
+import Welcome from '../../components/Dashboard/Welcome/Welcome';
+import QuickStats from '../../components/Dashboard/QuickStats/QuickStats';
+import RecentPostsAndDrafts from '../../components/Dashboard/RecentPostsAndDrafts/RecentPostsAndDrafts';
+import PerformanceInsights from '../../components/Dashboard/PerformanceInsights/PerformanceInsights';
+import QuickLinks from '../../components/Dashboard/QuickLinks/QuickLinks';
+import ResourceTips from '../../components/Dashboard/ResourceTips/ResourceTips';
+import Footer from '../../components/Dashboard/Footer/Footer';
 import './dashboard.css';
 
 function Dashboard({ userBlogs = [] }) {
@@ -12,27 +19,55 @@ function Dashboard({ userBlogs = [] }) {
       navigate('/login');
     }
   }, [user, navigate]);
+  
+  const stats = {
+    pageViews: 1500,
+    comments: 120,
+    followers: 350,
+    engagementRate: 4.7,
+  };
+
+  const recentPosts = [
+    { title: 'Post 1', excerpt: 'This is an excerpt from post 1...' },
+    { title: 'Post 2', excerpt: 'This is an excerpt from post 2...' },
+  ];
+
+  const drafts = [
+    { title: 'Draft 1' },
+    { title: 'Draft 2' },
+  ];
+
+  const insights = {
+    mostPopularPosts: [
+      { title: 'Understanding React Hooks', views: 1200 },
+      { title: 'Introduction to Serverless Architecture', views: 950 },
+      // More posts
+    ],
+    improvementTip: 'Consider focusing your next posts on trending topics in technology to boost engagement.'
+  };
+
+  const tips = [
+    "Engage with your readers through comments.",
+    "Use keywords effectively for SEO.",
+    // More tips
+  ];
+
+  const updates = [
+    "New feature: Customizable themes!",
+    "Update: Improved post editor.",
+    // More updates
+  ];
 
   return (
     <div className="dashboard">
       <Header/>
-      <h1>My Blogs</h1>
-      <div className="blog-list">
-        {userBlogs.length > 0 ? (
-          userBlogs.map((blog) => (
-            <div key={blog.id} className="blog-preview">
-              <h2>{blog.title}</h2>
-              <p>{blog.description}</p>
-              <Link to={`/edit/${blog.id}`} className="edit-link">Edit Blog</Link>
-            </div>
-          ))
-        ) : (
-          <p>You haven't created any blogs yet.</p>
-        )}
-      </div>
-      <div className="create-new-blog">
-        <Link to="/create" className="create-btn">Create New Blog</Link>
-      </div>
+      <Welcome username={user.displayName} />
+      <QuickStats stats={stats} />
+      <RecentPostsAndDrafts recentPosts={recentPosts} drafts={drafts} />
+      <PerformanceInsights insights={insights} />
+      <QuickLinks />
+      <ResourceTips tips={tips} updates={updates} />
+      <Footer />
     </div>
   );
 }

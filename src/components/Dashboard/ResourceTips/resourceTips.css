@@ -1,0 +1,37 @@
+.resources-tips {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tips-section, .updates-section {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+}
+
+.updates-section {
+  margin-right: 0; /* No margin for the last section */
+}
+
+.tips-section ul, .updates-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tips-section ul li, .updates-section ul li {
+  margin-bottom: 10px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.tips-section ul li:before, .updates-section ul li:before {
+  content: "•";
+  color: #007bff;
+  position: absolute;
+  left: 0;
+}
