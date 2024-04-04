@@ -1,0 +1,67 @@
+/* Basic Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+  line-height: 1.6;
+}
+
+.dashboard {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.dashboard-nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  background: #005f73;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.dashboard-nav a, .dashboard-nav button {
+  color: #ffffff;
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard-nav button {
+  cursor: pointer;
+}
+
+.dashboard-nav a:hover, .dashboard-nav button:hover {
+  background-color: #0a9396;
+}
+
+.welcome-message h1 {
+  margin-bottom: 20px;
+  color: #005f73;
+}
+
+.blog-stats, .latest-blogs {
+  background: #ffffff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.blog-stats h2, .latest-blogs h2 {
+  color: #3d5a80;
+  margin-bottom: 15px;
+}
+
+/* Additional styling as needed */

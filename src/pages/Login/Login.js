@@ -14,7 +14,7 @@ function Login() {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       console.log("Logged in user:", userCredential.user);
-      navigate('/');
+      navigate('/dashboard');
     } catch (error) {
       console.error("Error signing in with email and password", error);
     }
@@ -24,10 +24,9 @@ function Login() {
     const provider = new GoogleAuthProvider();
     try {
       const result = await signInWithPopup(auth, provider);
-      // This gives you a Google Access Token. You can use it to access the Google API.
       const user = result.user;
       console.log("Logged in Google user:", user);
-      navigate('/');
+      navigate('/dashboard');
     } catch (error) {
       console.error("Error signing in with Google", error);
     }
