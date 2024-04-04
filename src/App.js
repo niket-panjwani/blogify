@@ -3,18 +3,22 @@ import { Navigate, BrowserRouter as Router, Routes, Route } from 'react-router-d
 import Header from './components/Header/Header';
 import HeroSection from './components/Hero/Hero';
 import Features from './components/Features/Features';
+import Login from './pages/Login/Login';
+import { AuthProvider } from './config/Auth/AuthProvider';
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" element={<main><HeroSection /><Features /></main>} />
-          <Route path="/features" element={<Features />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-      </div>
+      <AuthProvider>
+        <div className="App">
+          <Header />
+          <Routes>
+            <Route path="/" element={<main><HeroSection /><Features /></main>} />
+            <Route path="/login" element={<><Login/></>} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </div>
+      </AuthProvider>
     </Router>
   );
 }

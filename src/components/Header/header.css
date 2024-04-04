@@ -34,6 +34,10 @@
   justify-content: flex-end;
 }
 
+.nav-group.right div {
+  color: white;
+}
+
 /* .signup-btn {
   background-color: #007bff;
   color: white;
