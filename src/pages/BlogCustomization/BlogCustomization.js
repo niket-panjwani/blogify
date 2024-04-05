@@ -9,7 +9,7 @@ import './blogCustomization.css';
 
 const BlogCustomization = () => {
 
-  const [themes, setThemes] = useState([
+  const [themes] = useState([
     { id: 'theme1', name: 'Theme 1', thumbnail: '/path/to/image1.png' },
     { id: 'theme2', name: 'Theme 2', thumbnail: '/path/to/image1.png' },
     { id: 'theme3', name: 'Theme 3', thumbnail: '/path/to/image1.png' },

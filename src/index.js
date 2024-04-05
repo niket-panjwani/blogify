@@ -4,7 +4,7 @@ import './styles/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Amplify } from 'aws-amplify';
-import config from './amplifyconfiguration.json';
+import config from './config/Auth/amplifyconfiguration.json';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 Amplify.configure(config);

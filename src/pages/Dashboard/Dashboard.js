@@ -1,6 +1,5 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import Header from '../../components/Dashboard/Header/Header';
-import { useNavigate } from 'react-router-dom';
 import Welcome from '../../components/Dashboard/Welcome/Welcome';
 import QuickStats from '../../components/Dashboard/QuickStats/QuickStats';
 import RecentPostsAndDrafts from '../../components/Dashboard/RecentPostsAndDrafts/RecentPostsAndDrafts';
@@ -10,10 +9,11 @@ import ResourceTips from '../../components/Dashboard/ResourceTips/ResourceTips';
 import Footer from '../../components/Dashboard/Footer/Footer';
 import './dashboard.css';
 import { withAuthenticator } from '@aws-amplify/ui-react';
+import useCurrentUser from '../../hooks/useCurrentUser';
 
 function Dashboard() {
-  //const navigate = useNavigate();
-  
+  const currentUser = useCurrentUser();
+
   const stats = {
     pageViews: 1500,
     comments: 120,
@@ -55,7 +55,7 @@ function Dashboard() {
   return (
     <div className="dashboard">
       <Header/>
-      <Welcome username='Niket Panjwani' />
+      <Welcome username={currentUser} />
       <QuickStats stats={stats} />
       <RecentPostsAndDrafts recentPosts={recentPosts} drafts={drafts} />
       <PerformanceInsights insights={insights} />

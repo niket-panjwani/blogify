@@ -1,8 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import './header.css';
+import useCurrentUser from '../../../hooks/useCurrentUser';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const currentUser = useCurrentUser();
 
   return (
     <header className="App-header">
@@ -14,7 +16,7 @@ function Header() {
         </div>
         <div className="nav-group right">
           <div>🔔</div>
-          <div onClick={() => setIsOpen(!isOpen)}>Niket Panjwani</div>
+          <div onClick={() => setIsOpen(!isOpen)}>{currentUser}</div>
         </div>
         {isOpen && (
             <div className="dropdown-menu">

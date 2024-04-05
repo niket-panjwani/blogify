@@ -17,7 +17,7 @@ function App() {
             <Route path="/about" element={<main><About/></main>} />
             <Route path="/contact" element={<main><Contact/></main>} />
             <Route path="/login" element={<><Authentication/></>} />
-            <Route path="/dashboard" element={<main><Dashboard/></main>} />
+            <Route path="/:username/dashboard" element={<main><Dashboard/></main>} />
             <Route path="/blog-customization" element={<main><BlogCustomization/></main>} />
             <Route path="/blog-view" element={<main><BlogView/></main>} />
             <Route path="*" element={<Navigate to="/" />} />
