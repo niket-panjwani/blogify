@@ -14,12 +14,6 @@ import useCurrentUser from '../../hooks/useCurrentUser';
 function Dashboard() {
   const currentUser = useCurrentUser();
 
-  const stats = {
-    pageViews: 1500,
-    comments: 120,
-    followers: 350,
-    engagementRate: 4.7,
-  };
 
   const recentPosts = [
     { title: 'Post 1', excerpt: 'This is an excerpt from post 1...' },
@@ -56,7 +50,7 @@ function Dashboard() {
     <div className="dashboard">
       <Header/>
       <Welcome username={currentUser} />
-      <QuickStats stats={stats} />
+      <QuickStats />
       <RecentPostsAndDrafts recentPosts={recentPosts} drafts={drafts} />
       <PerformanceInsights insights={insights} />
       <QuickLinks />

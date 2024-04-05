@@ -1,4 +1,48 @@
 {
+  "api": {
+    "api6464b5b1": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "stats"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
+    "blogified": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "blog"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
+    "blogifyUserStats": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "userStatsFuntion"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
   "auth": {
     "blogify88ac717f": {
       "customAuth": false,
@@ -25,6 +69,93 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    }
+  },
+  "function": {
+    "blog": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "stats": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributeEnvMap": {
+            "Arn": "TABLE_ARN",
+            "Name": "TABLE_NAME"
+          },
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "storage",
+          "resourceName": "dynamocfa776c4"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "userStatsFuntion": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_blog_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "blog"
+        }
+      ]
+    },
+    "AMPLIFY_function_blog_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "blog"
+        }
+      ]
+    },
+    "AMPLIFY_function_stats_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "stats"
+        }
+      ]
+    },
+    "AMPLIFY_function_stats_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "stats"
+        }
+      ]
+    },
+    "AMPLIFY_function_userStatsFuntion_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "userStatsFuntion"
+        }
+      ]
+    },
+    "AMPLIFY_function_userStatsFuntion_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "userStatsFuntion"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "dynamocfa776c4": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
     }
   }
 }

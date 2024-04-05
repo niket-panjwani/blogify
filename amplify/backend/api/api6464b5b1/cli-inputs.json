@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "paths": {
+    "/user/{userid}/stats": {
+      "name": "/user/{userid}/stats",
+      "lambdaFunction": "stats",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create"
+        ]
+      }
+    }
+  }
+}

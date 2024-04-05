@@ -1,0 +1,10 @@
+{
+  "resourceName": "dynamocfa776c4",
+  "tableName": "user_stats",
+  "partitionKey": {
+    "fieldName": "user_id",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

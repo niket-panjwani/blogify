@@ -1,13 +1,30 @@
-import React from 'react';
-import './quickStats.css'; // Importing the CSS file for styling
+import React, { useEffect, useState } from 'react';
+import './quickStats.css'; 
+import { fetchUserStats } from '../../../service/api'; 
 
-const QuickStats = ({ stats }) => {
+const QuickStats = () => {
+
+  const [stats, setStats] = useState({}); // use useState here
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const fetchedStats = await fetchUserStats(); // store result in a new variable
+        console.log('Fetched stats:', fetchedStats);
+        setStats(fetchedStats); // update state with new value
+      } catch (error) {
+        console.error('Failed to fetch user stats', error);
+      } 
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className="quick-stats">
       <h3>Quick Stats</h3>
       <div className="stats-container">
         <div className="stat-item">
-          <span className="stat-value">{stats.pageViews}</span>
+          <span className="stat-value">{stats.page_views}</span>
           <span className="stat-label">Page Views</span>
         </div>
         <div className="stat-item">
@@ -19,7 +36,7 @@ const QuickStats = ({ stats }) => {
           <span className="stat-label">Followers</span>
         </div>
         <div className="stat-item">
-          <span className="stat-value">{stats.engagementRate}%</span>
+          <span className="stat-value">{stats.engagement_rate}%</span>
           <span className="stat-label">Engagement Rate</span>
         </div>
       </div>
