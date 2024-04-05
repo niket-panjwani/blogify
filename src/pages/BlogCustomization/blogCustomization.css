@@ -1,0 +1,9 @@
+.blog-customization-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.blog-customization-page h2 {
+  margin-bottom: 20px;
+}

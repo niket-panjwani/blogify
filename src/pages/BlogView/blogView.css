@@ -1,0 +1,32 @@
+.blog-view-page {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.post-list, .author-bio, .social-sharing, .comments-section {
+  margin-bottom: 20px;
+}
+
+.post-item {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.comments-section p, .author-bio p {
+  margin-left: 20px;
+}
+
+.social-sharing button {
+  margin-right: 10px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.social-sharing button:hover {
+  background-color: #0056b3;
+}

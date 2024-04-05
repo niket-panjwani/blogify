@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import Header from '../../components/Dashboard/Header/Header';
-import { AuthContext } from '../../config/Auth/AuthContext';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Welcome from '../../components/Dashboard/Welcome/Welcome';
 import QuickStats from '../../components/Dashboard/QuickStats/QuickStats';
 import RecentPostsAndDrafts from '../../components/Dashboard/RecentPostsAndDrafts/RecentPostsAndDrafts';
@@ -10,15 +9,10 @@ import QuickLinks from '../../components/Dashboard/QuickLinks/QuickLinks';
 import ResourceTips from '../../components/Dashboard/ResourceTips/ResourceTips';
 import Footer from '../../components/Dashboard/Footer/Footer';
 import './dashboard.css';
+import { withAuthenticator } from '@aws-amplify/ui-react';
 
-function Dashboard({ userBlogs = [] }) {
-  const user = useContext(AuthContext);
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (!user) {
-      navigate('/login');
-    }
-  }, [user, navigate]);
+function Dashboard() {
+  //const navigate = useNavigate();
   
   const stats = {
     pageViews: 1500,
@@ -61,7 +55,7 @@ function Dashboard({ userBlogs = [] }) {
   return (
     <div className="dashboard">
       <Header/>
-      <Welcome username={user.displayName} />
+      <Welcome username='Niket Panjwani' />
       <QuickStats stats={stats} />
       <RecentPostsAndDrafts recentPosts={recentPosts} drafts={drafts} />
       <PerformanceInsights insights={insights} />
@@ -72,4 +66,4 @@ function Dashboard({ userBlogs = [] }) {
   );
 }
 
-export default Dashboard;
+export default withAuthenticator(Dashboard);
