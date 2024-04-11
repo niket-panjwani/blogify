@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "paths": {
+    "/{userid}/register/subdomain": {
+      "name": "/{userid}/register/subdomain",
+      "lambdaFunction": "handleSubdomain",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}

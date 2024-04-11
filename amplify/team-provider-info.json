@@ -31,12 +31,17 @@
         "blog": {
           "deploymentBucketName": "amplify-blogify-dev-667ec-deployment",
           "s3Key": "amplify-builds/blog-38346d45646242344171-build.zip"
+        },
+        "handleSubdomain": {
+          "deploymentBucketName": "amplify-blogify-dev-667ec-deployment",
+          "s3Key": "amplify-builds/handleSubdomain-504c414753753874706a-build.zip"
         }
       },
       "api": {
         "api6464b5b1": {},
         "blogifyUserStats": {},
-        "blogified": {}
+        "blogified": {},
+        "createSubdomainApi": {}
       }
     }
   }

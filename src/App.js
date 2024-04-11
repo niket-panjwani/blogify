@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import BlogCustomization from './pages/BlogCustomization/BlogCustomization';
 import BlogView from './pages/BlogView/BlogView';
 import Authentication from './pages/Authentication/Authentication';
+import Dashboards from './pages/Dashboard/Dash';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
             <Route path="/about" element={<main><About/></main>} />
             <Route path="/contact" element={<main><Contact/></main>} />
             <Route path="/login" element={<><Authentication/></>} />
-            <Route path="/:username/dashboard" element={<main><Dashboard/></main>} />
+            <Route path="/:username/dashboard" element={<main><Dashboards/></main>} />
             <Route path="/blog-customization" element={<main><BlogCustomization/></main>} />
             <Route path="/blog-view" element={<main><BlogView/></main>} />
             <Route path="*" element={<Navigate to="/" />} />

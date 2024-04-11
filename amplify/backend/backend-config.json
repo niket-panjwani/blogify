@@ -41,6 +41,20 @@
       ],
       "providerPlugin": "awscloudformation",
       "service": "API Gateway"
+    },
+    "createSubdomainApi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "handleSubdomain"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
     }
   },
   "auth": {
@@ -73,6 +87,11 @@
   },
   "function": {
     "blog": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "handleSubdomain": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
@@ -116,6 +135,22 @@
         {
           "category": "function",
           "resourceName": "blog"
+        }
+      ]
+    },
+    "AMPLIFY_function_handleSubdomain_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "handleSubdomain"
+        }
+      ]
+    },
+    "AMPLIFY_function_handleSubdomain_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "handleSubdomain"
         }
       ]
     },
